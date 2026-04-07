@@ -11,22 +11,19 @@ Joyboy ….le respect ne se demande pas
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            user-select: none; /* pour un style "clan", évite la sélection gênante */
         }
 
         body {
             min-height: 100vh;
             background: radial-gradient(circle at 20% 30%, #0b0e1a, #03050b);
-            font-family: 'Segoe UI', 'Poppins', 'Orbitron', 'Montserrat', system-ui, -apple-system, 'Inter', sans-serif;
+            font-family: 'Segoe UI', 'Poppins', 'Orbitron', 'Montserrat', system-ui, sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 1.5rem;
             position: relative;
-            transition: background 0.3s ease;
         }
 
-        /* Overlay jour / lumière tamisée (jour mais sombre chic) */
         body::before {
             content: "";
             position: fixed;
@@ -39,9 +36,8 @@ Joyboy ….le respect ne se demande pas
             z-index: 0;
         }
 
-        /* Conteneur principal glassmorphisme sombre mais avec reflets jour */
         .main-container {
-            max-width: 1300px;
+            max-width: 1400px;
             width: 100%;
             background: rgba(12, 10, 22, 0.65);
             backdrop-filter: blur(14px);
@@ -53,7 +49,6 @@ Joyboy ….le respect ne se demande pas
             z-index: 2;
         }
 
-        /* zone de verrouillage (code) */
         .lock-screen {
             display: flex;
             flex-direction: column;
@@ -99,7 +94,6 @@ Joyboy ….le respect ne se demande pas
             width: 220px;
             backdrop-filter: blur(4px);
             outline: none;
-            transition: 0.2s;
         }
 
         #codeInput:focus {
@@ -125,7 +119,6 @@ Joyboy ….le respect ne se demande pas
             border-color: #f5bc70;
             color: #fff2df;
             transform: scale(0.97);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .error-msg {
@@ -134,10 +127,8 @@ Joyboy ….le respect ne se demande pas
             padding: 0.4rem 1rem;
             border-radius: 40px;
             font-size: 0.85rem;
-            backdrop-filter: blur(4px);
         }
 
-        /* Contenu principal (après déverrouillage) */
         .clan-content {
             display: none;
             animation: fadeIn 0.5s ease;
@@ -148,7 +139,6 @@ Joyboy ….le respect ne se demande pas
             to { opacity: 1; transform: translateY(0);}
         }
 
-        /* en-tête avec nom du chef */
         .cheffe-header {
             display: flex;
             flex-wrap: wrap;
@@ -167,7 +157,6 @@ Joyboy ….le respect ne se demande pas
             background-clip: text;
             color: transparent;
             letter-spacing: 3px;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
         .chef-title {
@@ -188,34 +177,31 @@ Joyboy ….le respect ne se demande pas
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 6px rgba(0,0,0,0.5);
         }
 
-        /* grille 2 parties : chef & membres */
         .roles-section {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
-            margin: 2rem 0 2.5rem 0;
+            margin: 2rem 0 2rem 0;
         }
 
         .card {
             flex: 1;
-            min-width: 250px;
+            min-width: 280px;
             background: rgba(0, 0, 0, 0.55);
             backdrop-filter: blur(8px);
             border-radius: 2rem;
             padding: 1.6rem;
             border: 1px solid rgba(200, 160, 90, 0.5);
-            transition: 0.2s;
         }
 
         .card h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 600;
             border-left: 5px solid #e7b45a;
             padding-left: 1rem;
-            margin-bottom: 1.4rem;
+            margin-bottom: 1.2rem;
             color: #f7e3b2;
         }
 
@@ -233,7 +219,6 @@ Joyboy ….le respect ne se demande pas
             gap: 12px;
             font-weight: 500;
             border: 1px solid #5f4a2e;
-            transition: 0.1s;
             color: #f0e2c5;
         }
 
@@ -246,7 +231,6 @@ Joyboy ….le respect ne se demande pas
             content: "👑";
         }
 
-        /* zone téléspectateurs + code spécial */
         .spectators-area {
             margin-top: 2rem;
             background: rgba(0, 0, 0, 0.45);
@@ -302,7 +286,6 @@ Joyboy ….le respect ne se demande pas
             color: #ffddbb;
             cursor: pointer;
             font-weight: bold;
-            transition: 0.2s;
         }
 
         .spectator-code-box button:hover {
@@ -327,13 +310,101 @@ Joyboy ….le respect ne se demande pas
             color: #d4c09d;
         }
 
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 30px;
+            background: #1a1625;
+            border: 1px solid #b87c4f;
+            color: white;
+            font-family: inherit;
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            border-radius: 20px;
+        }
+
+        .btn-clan {
+            background: #b87c4f;
+            border: none;
+            padding: 10px;
+            border-radius: 30px;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: 0.2s;
+            margin-top: 5px;
+        }
+
+        .btn-clan:hover {
+            background: #d4945e;
+        }
+
+        .btn-clan.secondary {
+            background: #3f3320;
+            color: #ffdd99;
+        }
+
+        .btn-clan.secondary:hover {
+            background: #66512e;
+        }
+
+        .messages-container {
+            max-height: 250px;
+            overflow-y: auto;
+            margin-top: 15px;
+        }
+
+        .message-item {
+            background: #0f0d16;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 15px;
+            border-left: 3px solid #e7b45a;
+        }
+
+        .message-author {
+            color: #e7b45a;
+            font-weight: bold;
+        }
+
+        .message-date {
+            color: #7a6a4a;
+            font-size: 0.7rem;
+        }
+
+        .message-text {
+            color: #f0e2c5;
+            margin-top: 5px;
+            word-break: break-word;
+        }
+
+        .membres-list {
+            margin-top: 15px;
+            padding: 10px;
+            background: #0a0814;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #c4b28a;
+        }
+
         hr {
             border-color: #5e4a2e;
             margin: 1rem 0;
         }
 
-        /* responsive */
-        @media (max-width: 780px) {
+        footer {
+            text-align: center;
+            font-size: 0.7rem;
+            margin-top: 2rem;
+            color: #b6a077;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 900px) {
             .main-container {
                 padding: 1.2rem;
             }
@@ -344,24 +415,14 @@ Joyboy ….le respect ne se demande pas
                 font-size: 1.3rem;
             }
             .card h3 {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
-        }
-        footer {
-            text-align: center;
-            font-size: 0.7rem;
-            margin-top: 2rem;
-            color: #b6a077;
-            opacity: 0.7;
-        }
-        button {
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
-<div class="main-container" id="appContainer">
-    <!-- ÉCRAN DE VERROUILLAGE (code d'accès général) -->
+<div class="main-container">
+    <!-- ÉCRAN DE VERROUILLAGE -->
     <div id="lockScreen" class="lock-screen">
         <div class="lock-icon">🔐⛩️</div>
         <h2>✦ ACCÈS CLAN ZETSU ✦</h2>
@@ -371,12 +432,11 @@ Joyboy ….le respect ne se demande pas
             <button class="btn-code" id="unlockBtn">DÉVERROUILLER</button>
         </div>
         <div id="lockError" class="error-msg"></div>
-        <div style="font-size:0.75rem; color:#9e8a64;">※ Code réservé aux guerriers ZETSU</div>
     </div>
 
-    <!-- CONTENU PRINCIPAL DU CLAN (après code) -->
+    <!-- CONTENU PRINCIPAL DU CLAN -->
     <div id="clanContent" class="clan-content">
-        <!-- Header avec nom de la cheffe : BLACK 𝐓𝐎𝐁𝐈 𝐙𝐄𝐓𝐒𝐔 -->
+        <!-- En-tête avec cheffe -->
         <div class="cheffe-header">
             <div class="clan-name">⚔️ 𝐙𝐄𝐓𝐒𝐔 ⚔️</div>
             <div class="chef-title">
@@ -385,22 +445,23 @@ Joyboy ….le respect ne se demande pas
             </div>
         </div>
 
-        <!-- PARTIE CHEF et MEMBRES -->
+        <!-- Section Chef + Membres existants -->
         <div class="roles-section">
-            <!-- Carte CHEF (détail) -->
             <div class="card">
                 <h3>👑 HAUT COMMANDEMENT</h3>
                 <ul class="chef-list">
-                    <li><strong>BLACK 𝐓𝐎𝐁𝐈 𝐙𝐄𝐓𝐒𝐔</strong> — Cheffe & Stratège de la Purge</li>
+                    <li><strong>BLACK 𝐓𝐎𝐁𝐈 𝐙𝐄𝐓𝐒𝐔</strong> — Cheffe & Stratège</li>
                     <li><strong>AKUMA ZETSU</strong> — Bras droit / Exécuteur noir</li>
                     <li><strong>RAIJIN KAGE</strong> — Gardien de l'Ombre</li>
                 </ul>
-                <div style="margin-top: 12px; font-size:0.85rem; color:#dbbf88;">〄 La volonté de ZETSU ne faiblit jamais</div>
+                <!-- Zone qui affichera les membres inscrits dynamiquement -->
+                <div id="listeMembresInscrits" class="membres-list">
+                    📜 Chargement des membres...
+                </div>
             </div>
 
-            <!-- Carte MEMBRES élites -->
             <div class="card">
-                <h3>⚔️ MEMBRES D’ÉLITE</h3>
+                <h3>⚔️ MEMBRES D'ÉLITE</h3>
                 <ul class="member-list">
                     <li>SHINIGAMI ZETSU</li>
                     <li>KURO HAGANE</li>
@@ -412,12 +473,31 @@ Joyboy ….le respect ne se demande pas
             </div>
         </div>
 
-        <!-- SECTION TÉLÉSPECTATEURS + CODE SPÉCIAL -->
+        <!-- SECTION INSCRIPTION MEMBRES -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+            <h3>📝 ENREGISTREMENT ZETSU</h3>
+            <input type="text" id="pseudoInscription" class="form-input" placeholder="Ton pseudo de guerrier">
+            <input type="password" id="mdpInscription" class="form-input" placeholder="Mot de passe du clan">
+            <button id="btnInscription" class="btn-clan">⚔️ Devenir membre ZETSU</button>
+            <div id="messageInscription" style="margin-top:10px; font-size:0.8rem; color:#ffcc88;"></div>
+        </div>
+
+        <!-- SECTION DICTÉE / MESSAGES DU CLAN -->
+        <div class="card">
+            <h3>🎙️ PAROLE DU CLAN (DICTÉE)</h3>
+            <textarea id="messageTexte" class="form-input" rows="3" placeholder="Écris ton message ici..."></textarea>
+            <button id="btnPoster" class="btn-clan secondary">📢 DICTER / PUBLIER</button>
+            <div id="listeMessages" class="messages-container">
+                <p style="color:#aa9f7f; font-style:italic;">Aucun message pour l'instant...</p>
+            </div>
+        </div>
+
+        <!-- SECTION TÉLÉSPECTATEURS -->
         <div class="spectators-area">
             <div class="spectator-header">
                 <span>🎭 SPECTATEURS & ALLIÉS 🎭</span>
                 <div class="spectator-code-box">
-                    <input type="text" id="spectatorCodeInput" placeholder="Code téléspectateur" maxlength="20">
+                    <input type="text" id="spectatorCodeInput" placeholder="Code téléspectateur">
                     <button id="validateSpectatorBtn">ENTRER</button>
                 </div>
             </div>
@@ -426,270 +506,211 @@ Joyboy ….le respect ne se demande pas
                 ⚡ En attente du code des téléspectateurs...
             </div>
             <hr>
-            <div style="font-size:0.7rem; text-align:right; opacity:0.7;">⚔️ La Purge est éternelle — Les yeux ouverts, l'âme prête.</div>
+            <div style="font-size:0.7rem; text-align:right;">⚔️ La Purge est éternelle — Code & Honneur</div>
         </div>
-        <footer>© CLAN ZETSU — Sous l’égide de BLACK TOBI ZETSU — Code & Honneur</footer>
+        <footer>© CLAN ZETSU — Sous l'égide de BLACK TOBI ZETSU</footer>
     </div>
 </div>
 
 <script>
-    // ==================== CONFIGURATION DES CODES ====================
-    // Code principal pour accéder au site (pour les membres et chef)
-    const MAIN_ACCESS_CODE = "PURGEZETSU2025";   // code pour entrer dans le clan
-    
-    // Code spécial pour les téléspectateurs (observateurs externes)
-    const SPECTATOR_CODE = "EYEOFZETSU";         // les témoins utilisent ce code pour accéder au message spécial
-    
-    // État : site déverrouillé ou non
+    // ==================== CODES D'ACCÈS ====================
+    const MAIN_ACCESS_CODE = "PURGEZETSU2025";
+    const SPECTATOR_CODE = "EYEOFZETSU";
+    const MEMBER_PASSWORD = "ZETSU2025";  // mot de passe pour s'inscrire
+
     let isUnlocked = false;
-    
-    // État : code téléspectateur validé (pour afficher le contenu secret)
     let spectatorValidated = false;
-    
-    // Éléments DOM
-    const lockScreenDiv = document.getElementById('lockScreen');
-    const clanContentDiv = document.getElementById('clanContent');
-    const unlockBtn = document.getElementById('unlockBtn');
-    const codeInputField = document.getElementById('codeInput');
-    const lockErrorSpan = document.getElementById('lockError');
-    
-    // éléments téléspectateurs
-    const spectatorCodeInput = document.getElementById('spectatorCodeInput');
-    const validateSpectatorBtn = document.getElementById('validateSpectatorBtn');
-    const spectatorFeedbackDiv = document.getElementById('spectatorFeedback');
-    const spectatorSecretZone = document.getElementById('spectatorSecretZone');
-    
-    // Fonction pour afficher le contenu principal si code correct
-    function unlockSite(enteredCode) {
-        if (enteredCode === MAIN_ACCESS_CODE) {
-            isUnlocked = true;
-            lockScreenDiv.style.display = 'none';
-            clanContentDiv.style.display = 'block';
-            // réinitialiser le statut spectateur quand on entre dans le site (mais on garde la zone neutre)
-            spectatorValidated = false;
-            updateSpectatorUI();
-            return true;
-        } else {
-            lockErrorSpan.innerText = "❌ Code invalide. L'accès au clan est refusé.";
-            setTimeout(() => {
-                if(lockErrorSpan) lockErrorSpan.innerText = "";
-            }, 2000);
-            return false;
-        }
-    }
-    
-    // Gestion du clic déverrouillage
-    unlockBtn.addEventListener('click', () => {
-        const code = codeInputField.value.trim();
-        if (code === "") {
-            lockErrorSpan.innerText = "❌ Entrez le code sacré du clan.";
+
+    // Données stockées localement
+    let membresZetsu = JSON.parse(localStorage.getItem('membresZetsu')) || [];
+    let messagesClan = JSON.parse(localStorage.getItem('messagesClan')) || [];
+
+    // ==================== FONCTIONS D'AFFICHAGE ====================
+    function afficherMessages() {
+        const container = document.getElementById('listeMessages');
+        if (!container) return;
+        if (messagesClan.length === 0) {
+            container.innerHTML = '<p style="color:#aa9f7f; font-style:italic;">Aucun message pour l\'instant... Sois le premier à dicter !</p>';
             return;
         }
-        unlockSite(code);
-    });
-    
-    // Optionnel: touche entrée sur le champ code
-    codeInputField.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            unlockBtn.click();
-        }
-    });
-    
-    // Mettre à jour l'interface des téléspectateurs selon validation
-    function updateSpectatorUI() {
-        if (!isUnlocked) return; // ne s'applique que si le site est débloqué
-        if (spectatorValidated) {
-            spectatorFeedbackDiv.innerHTML = "✅ [CODE VALIDE] Bienvenue, témoin de la purge. Vous avez accès aux transmissions spéciales.";
-            spectatorFeedbackDiv.style.background = "#1f3a1faa";
-            spectatorFeedbackDiv.style.color = "#d4ffc4";
-            // contenu secret réservé aux spectateurs avec le code
-            spectatorSecretZone.innerHTML = `
-                <span style="font-weight:bold;">📡 TRANSMISSION SPECTATEUR ZETSU :</span><br>
-                ▸ La grande purge approche... BLACK TOBI ZETSU lance un appel aux ombres.<br>
-                ▸ Prochain rassemblement : Sanctuaire de la Lune Noire (24h).<br>
-                ▸ "Ceux qui regardent sans agir seront pourtant les témoins de l'éternité."<br>
-                🎴 <em>Message codé des spectateurs : code partagé — restez vigilants.</em>
-            `;
+        container.innerHTML = messagesClan.map(msg => `
+            <div class="message-item">
+                <span class="message-author">${escapeHtml(msg.auteur)}</span>
+                <span class="message-date">(${msg.date})</span>
+                <p class="message-text">${escapeHtml(msg.texte)}</p>
+            </div>
+        `).join('');
+    }
+
+    function mettreAJourListeMembres() {
+        const zone = document.getElementById('listeMembresInscrits');
+        if (!zone) return;
+        if (membresZetsu.length === 0) {
+            zone.innerHTML = '📜 Aucun membre inscrit pour l\'instant. Deviens le premier !';
         } else {
-            spectatorFeedbackDiv.innerHTML = "🔐 Code téléspectateur requis. Entrez le code pour recevoir les visions du clan.";
-            spectatorFeedbackDiv.style.background = "#1c170e80";
-            spectatorFeedbackDiv.style.color = "#ffe2b5";
-            spectatorSecretZone.innerHTML = `🌙 [Accès restreint] Les murmures de la purge ne sont accessibles qu'aux téléspectateurs ayant le bon code. 
-            <br>⚡ Invocation: entrez le code des témoins.`;
+            zone.innerHTML = `<strong>👥 Membres enregistrés (${membresZetsu.length}) :</strong><br> ${membresZetsu.map(m => `⚔️ ${escapeHtml(m)}`).join(' • ')}`;
         }
     }
-    
-    // Valider le code spectateur
-    function validateSpectatorCode() {
+
+    // Fonction anti-XSS simple
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+            return c;
+        });
+    }
+
+    // ==================== GESTION SPECTATEURS ====================
+    function updateSpectatorUI() {
+        if (!isUnlocked) return;
+        const feedback = document.getElementById('spectatorFeedback');
+        const secretZone = document.getElementById('spectatorSecretZone');
+        if (spectatorValidated) {
+            feedback.innerHTML = "✅ [CODE VALIDE] Bienvenue, témoin de la purge. Accès aux transmissions spéciales.";
+            feedback.style.background = "#1f3a1faa";
+            secretZone.innerHTML = `📡 TRANSMISSION SPECTATEUR :<br>▸ La grande purge approche... BLACK TOBI ZETSU lance un appel.<br>▸ Prochain rassemblement : Sanctuaire de la Lune Noire (24h).<br>▸ "Ceux qui regardent sans agir seront pourtant les témoins de l'éternité."<br>🎴 Message codé : restez vigilants.`;
+        } else {
+            feedback.innerHTML = "🔐 Code téléspectateur requis. Entrez le code pour recevoir les visions du clan.";
+            feedback.style.background = "#1c170e80";
+            secretZone.innerHTML = `🌙 [Accès restreint] Les murmures de la purge ne sont accessibles qu'aux téléspectateurs ayant le bon code. ⚡ Entrez le code des témoins.`;
+        }
+    }
+
+    // ==================== DÉVERROUILLAGE DU SITE ====================
+    function unlockSite() {
+        const code = document.getElementById('codeInput').value.trim();
+        if (code === MAIN_ACCESS_CODE) {
+            isUnlocked = true;
+            document.getElementById('lockScreen').style.display = 'none';
+            document.getElementById('clanContent').style.display = 'block';
+            spectatorValidated = false;
+            updateSpectatorUI();
+            afficherMessages();
+            mettreAJourListeMembres();
+            document.getElementById('lockError').innerText = "";
+        } else {
+            document.getElementById('lockError').innerText = "❌ Code invalide. L'accès au clan est refusé.";
+            setTimeout(() => {
+                const err = document.getElementById('lockError');
+                if (err) err.innerText = "";
+            }, 2000);
+        }
+    }
+
+    // ==================== INSCRIPTION MEMBRE ====================
+    function inscrireMembre() {
         if (!isUnlocked) {
-            // Si le site n'est pas encore débloqué, on ne peut pas activer cette partie
+            alert("Déverrouille d'abord l'accès au clan !");
+            return;
+        }
+        const pseudo = document.getElementById('pseudoInscription').value.trim();
+        const mdp = document.getElementById('mdpInscription').value;
+        const msgDiv = document.getElementById('messageInscription');
+        
+        if (!pseudo || !mdp) {
+            msgDiv.innerHTML = "❌ Remplis ton pseudo et ton mot de passe !";
+            return;
+        }
+        if (mdp !== MEMBER_PASSWORD) {
+            msgDiv.innerHTML = "❌ Mot de passe du clan incorrect ! (Le code est ZETSU2025)";
+            return;
+        }
+        if (membresZetsu.includes(pseudo)) {
+            msgDiv.innerHTML = "⚠️ Ce pseudo est déjà enregistré dans le clan !";
+            return;
+        }
+        
+        membresZetsu.push(pseudo);
+        localStorage.setItem('membresZetsu', JSON.stringify(membresZetsu));
+        msgDiv.innerHTML = "✅ Félicitations ! Tu es officiellement un membre ZETSU 🔥 La purge t'appelle.";
+        document.getElementById('pseudoInscription').value = "";
+        document.getElementById('mdpInscription').value = "";
+        mettreAJourListeMembres();
+        setTimeout(() => {
+            if (msgDiv) msgDiv.innerHTML = "";
+        }, 3000);
+    }
+
+    // ==================== DICTÉE / POSTER MESSAGE ====================
+    function posterMessage() {
+        if (!isUnlocked) {
+            alert("Déverrouille l'accès au clan d'abord.");
+            return;
+        }
+        const pseudoActif = prompt("🔐 Entre ton pseudo ZETSU (celui avec lequel tu t'es inscrit) pour dicter :");
+        if (!pseudoActif) return;
+        
+        if (!membresZetsu.includes(pseudoActif)) {
+            alert("❌ Tu n'es pas un membre enregistré du clan ! Inscris-toi d'abord avec le mot de passe.");
+            return;
+        }
+        
+        const texte = document.getElementById('messageTexte').value.trim();
+        if (!texte) {
+            alert("Écris un message avant de dicter !");
+            return;
+        }
+        
+        const nouveauMsg = {
+            auteur: pseudoActif,
+            texte: texte.substring(0, 500),
+            date: new Date().toLocaleString()
+        };
+        messagesClan.unshift(nouveauMsg);
+        if (messagesClan.length > 50) messagesClan.pop();
+        localStorage.setItem('messagesClan', JSON.stringify(messagesClan));
+        afficherMessages();
+        document.getElementById('messageTexte').value = "";
+        alert("📢 Message dicté avec succès ! Les membres du clan peuvent le voir.");
+    }
+
+    function validateSpectator() {
+        if (!isUnlocked) {
             alert("Veuillez d'abord déverrouiller l'accès au clan avec le code principal.");
             return;
         }
-        const enteredSpecCode = spectatorCodeInput.value.trim();
-        if (enteredSpecCode === SPECTATOR_CODE) {
+        const specCode = document.getElementById('spectatorCodeInput').value.trim();
+        if (specCode === SPECTATOR_CODE) {
             spectatorValidated = true;
             updateSpectatorUI();
-            spectatorCodeInput.value = "";
-            // petit effet visuel sympa
-            spectatorFeedbackDiv.style.transition = "0.2s";
+            document.getElementById('spectatorCodeInput').value = "";
+            const fb = document.getElementById('spectatorFeedback');
+            fb.style.transition = "0.2s";
         } else {
             spectatorValidated = false;
             updateSpectatorUI();
-            spectatorFeedbackDiv.innerHTML = "❌ Code téléspectateur incorrect. Aucun accès aux transmissions.";
-            spectatorFeedbackDiv.style.background = "#2f1e18aa";
+            const fb = document.getElementById('spectatorFeedback');
+            fb.innerHTML = "❌ Code téléspectateur incorrect. Accès refusé.";
             setTimeout(() => {
-                if (!spectatorValidated) {
-                    // remettre le message par défaut si toujours invalide après 2 sec
-                    if(!spectatorValidated && isUnlocked) updateSpectatorUI();
-                }
+                if (!spectatorValidated && isUnlocked) updateSpectatorUI();
             }, 1800);
         }
     }
-    
-    validateSpectatorBtn.addEventListener('click', validateSpectatorCode);
-    spectatorCodeInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') validateSpectatorCode();
+
+    // ==================== ATTACHEMENT DES ÉVÉNEMENTS ====================
+    document.getElementById('unlockBtn').addEventListener('click', unlockSite);
+    document.getElementById('codeInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') unlockSite();
     });
-    
-    // Petite subtilité: si jamais le site est déjà débloqué via un code correct, on initialise l'interface téléspectateur.
-    // Pour gérer le cas où on voudrait préremplir après déblocage (mais le code est validé par le bouton)
-    // On initialise le statut spectatorValidated à false par défaut et on appel updateSpectatorUI quand le contenu devient visible.
-    
-    // Observer l'affichage du contenu principal via MutationObserver ou simple vérification lors du déblocage.
-    // Dans unlockSite, après l'affichage, on met à jour l'UI des spectateurs.
-    // On a déjà appelé updateSpectatorUI dans unlockSite.
-    // Mais pour être sur, on surcharge unlockSite original pour qu'il déclenche l'update.
-    // On va conserver la logique mais on avait déjà fait updateSpectatorUI à la fin de unlockSite.
-    // Cependant notre fonction unlockSite originale ne contient pas encore updateSpectatorUI. On va la réécrire proprement.
-    // Re-définissons unlockSite pour intégrer l'appel UI.
-    // On va remplacer la fonction pour qu'elle contienne tout.
-    // ATTENTION: on ne peut pas redéfinir simplement car le code a déjà défini addEventListener. On va plutôt remplacer la logique.
-    // En fait, on override la fonction unlockSite originale en la déclarant de nouveau plus tard.
-    // Mais pour éviter les conflits, je vais redéfinir proprement.
-    // Je supprime l'ancien addEventListener et je recrée une version améliorée.
-    // Cependant on ne peut pas supprimer l'écouteur facilement. On va simplement ajouter un call dans le click existant. 
-    // On va modifier la fonction unlockSite initiale.
-    // Solution: remplacer le comportement du bouton avec une nouvelle fonction mais attention aux doublons.
-    // On va supprimer l'ancien écouteur en clonant? Non plus simple: on va commenter l'ancien écouteur théorique mais comme c'est déjà écrit, le code est exécuté séquentiellement.
-    // Pour être propre, je vais redéfinir complètement l'écouteur après avoir retiré l'ancien ?
-    // Le script est linéaire : l'ancien écouteur est déjà attaché. Mais on peut le remplacer en enlevant d'abord via removeEventListener? Pas simple sans ref.
-    // Alternative: Je vais ajouter un drapeau pour éviter double update, mais je préfère réécrire la fonction unlockSite ET remplacer l'écouteur.
-    // Je vais réaffecter l'écouteur après avoir retiré l'ancien avec une copie de la fonction.
-    // On va stocker les références.
-    
-    // Rafraichissement complet de la gestion du déverrouillage pour intégrer UI spectateur :
-    const newUnlockHandler = function() {
-        const code = codeInputField.value.trim();
-        if (code === "") {
-            lockErrorSpan.innerText = "❌ Entrez le code sacré du clan.";
-            return;
-        }
-        if (code === MAIN_ACCESS_CODE) {
-            isUnlocked = true;
-            lockScreenDiv.style.display = 'none';
-            clanContentDiv.style.display = 'block';
-            spectatorValidated = false;
-            updateSpectatorUI();
-            lockErrorSpan.innerText = "";
-        } else {
-            lockErrorSpan.innerText = "❌ Code invalide. L'accès au clan est refusé.";
-            setTimeout(() => {
-                if(lockErrorSpan) lockErrorSpan.innerText = "";
-            }, 2000);
-        }
-    };
-    
-    // Remplacer l'événement click
-    unlockBtn.removeEventListener('click', unlockSite); // la fonction originale n'est pas nommée, mais on va remplacer
-    // On va plutôt remplacer le bouton en lui attribuant un nouvel écouteur, mais l'ancien existe toujours ? On clone ?
-    // Technique: On va remplacer l'élément bouton par un clone pour supprimer tous les écouteurs.
-    const newUnlockBtn = unlockBtn.cloneNode(true);
-    unlockBtn.parentNode.replaceChild(newUnlockBtn, unlockBtn);
-    // Maintenant on travaille avec newUnlockBtn
-    const finalUnlockBtn = document.getElementById('unlockBtn'); // récupérer le nouvel id
-    const finalCodeInput = document.getElementById('codeInput');
-    const finalLockError = document.getElementById('lockError');
-    
-    finalUnlockBtn.addEventListener('click', () => {
-        const code = finalCodeInput.value.trim();
-        if (code === "") {
-            if(finalLockError) finalLockError.innerText = "❌ Entrez le code sacré du clan.";
-            return;
-        }
-        if (code === MAIN_ACCESS_CODE) {
-            isUnlocked = true;
-            lockScreenDiv.style.display = 'none';
-            clanContentDiv.style.display = 'block';
-            spectatorValidated = false;
-            updateSpectatorUI();
-            if(finalLockError) finalLockError.innerText = "";
-        } else {
-            if(finalLockError) finalLockError.innerText = "❌ Code invalide. L'accès au clan est refusé.";
-            setTimeout(() => {
-                if(finalLockError) finalLockError.innerText = "";
-            }, 2000);
-        }
+    document.getElementById('btnInscription').addEventListener('click', inscrireMembre);
+    document.getElementById('btnPoster').addEventListener('click', posterMessage);
+    document.getElementById('validateSpectatorBtn').addEventListener('click', validateSpectator);
+    document.getElementById('spectatorCodeInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') validateSpectator();
     });
-    
-    finalCodeInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') finalUnlockBtn.click();
-    });
-    
-    // réaffecter les références pour les autres fonctions
-    window.updateSpectatorUI = updateSpectatorUI;
-    // Mise à jour initiale : si par hasard quelqu'un avait déjà débloqué (impossible car on vient de démarrer)
-    // Par défaut lockScreen visible, clanContent caché.
-    // Assurons que le contenu soit masqué et lock screen visible.
-    lockScreenDiv.style.display = 'flex';
-    clanContentDiv.style.display = 'none';
-    isUnlocked = false;
-    spectatorValidated = false;
-    
-    // Rafraichir les messages spectateur après tout
-    // On s'assure que updateSpectatorUI fonctionne même avant déverrouillage ? pas nécessaire.
-    // Réassigner les écouteurs spectateur en cas de remplacement
-    const newSpectatorBtn = document.getElementById('validateSpectatorBtn');
-    const newSpectatorInput = document.getElementById('spectatorCodeInput');
-    if(newSpectatorBtn && newSpectatorInput) {
-        // Enlever les anciens écouteurs potentiels (clonage)
-        const freshBtn = newSpectatorBtn.cloneNode(true);
-        newSpectatorBtn.parentNode.replaceChild(freshBtn, newSpectatorBtn);
-        const finalSpecBtn = document.getElementById('validateSpectatorBtn');
-        const finalSpecInput = document.getElementById('spectatorCodeInput');
-        finalSpecBtn.addEventListener('click', () => {
-            if (!isUnlocked) {
-                alert("Veuillez d'abord déverrouiller l'accès au clan.");
-                return;
-            }
-            const codeSpec = finalSpecInput.value.trim();
-            if (codeSpec === SPECTATOR_CODE) {
-                spectatorValidated = true;
-                updateSpectatorUI();
-                finalSpecInput.value = "";
-            } else {
-                spectatorValidated = false;
-                updateSpectatorUI();
-                const fb = document.getElementById('spectatorFeedback');
-                if(fb) {
-                    fb.innerHTML = "❌ Code téléspectateur incorrect. Aucun accès.";
-                    setTimeout(() => { if(!spectatorValidated && isUnlocked) updateSpectatorUI(); }, 1500);
-                }
-            }
-        });
-        finalSpecInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') finalSpecBtn.click();
-        });
+
+    // Initialisation silencieuse
+    if (membresZetsu.length === 0) {
+        console.log("Aucun membre enregistré pour le moment.");
     }
-    
-    // initialiser l'affichage du contenu spectateur (par défaut)
-    if(clanContentDiv.style.display !== 'block') {
-        // rien pour le moment
+    if (messagesClan.length === 0) {
+        console.log("Bienvenue dans le clan ZETSU !");
     }
-    // on force l'état UI pour l'écran spectateur quand le site est lock (juste pour cohérence)
-    // au cas où l'utilisateur valide spectateur avant déblocage (on gère via alert)
-    console.log("ZETSU CLAN | Prêt. Code principal: PURGEZETSU2025 | Code spectateur: EYEOFZETSU");
 </script>
 </body>
 </html>
