@@ -13,7 +13,10 @@ Joyboy ….le respect ne se demande pas
             box-sizing: border-box;
         }
 
-        body {
+        body {<!-- VIDÉO LOCALE EN ARRIÈRE-PLAN -->
+<video autoplay muted loop playsinline style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    <source src="ta-video.mp4" type="video/mp4">
+</video>
             min-height: 100vh;
             background: radial-gradient(circle at 20% 30%, #0b0e1a, #03050b);
             font-family: 'Segoe UI', 'Poppins', 'Orbitron', 'Montserrat', system-ui, sans-serif;
