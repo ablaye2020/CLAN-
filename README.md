@@ -518,8 +518,8 @@ Joyboy…le respect ne se demande pas
 <script>
     // ==================== CODES D'ACCÈS ====================
     const MAIN_ACCESS_CODE = "PURGEZETSU2025";
-    const SPECTATOR_CODE = "EYEOFZETSU";
-    const MEMBER_PASSWORD = "ZETSU2025";  // mot de passe pour s'inscrire
+    const SPECTATOR_CODE = "ZETSU";
+    const MEMBER_PASSWORD = "ZETSU20";  // mot de passe pour s'inscrire
 
     let isUnlocked = false;
     let spectatorValidated = false;
