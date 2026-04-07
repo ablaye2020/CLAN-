@@ -1,5 +1,5 @@
 # CLAN-
-Joyboy ….le respect ne se demande pas 
+Joyboy…le respect ne se demande pas 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
